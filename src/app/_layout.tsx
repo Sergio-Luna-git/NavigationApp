@@ -1,18 +1,26 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { useFonts } from 'expo-font';
+import { SplashScreen, Stack } from 'expo-router';
+import { useEffect } from 'react';
+import "./global.css";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+const RootLayout = () => {
 
-SplashScreen.preventAutoHideAsync();
+    const [fontsLoaded, error] = useFonts({
+        'WorkSans-Black': require('../../assets/fonts/WorkSans-Black.ttf'),
+        'WorkSans-Light': require('../../assets/fonts/WorkSans-Light.ttf'),
+        'WorkSans-Medium': require('../../assets/fonts/WorkSans-Medium.ttf'),
+    });
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
-  );
+    useEffect(() => {
+        if (error) throw error;
+        if (fontsLoaded) SplashScreen.hideAsync()
+    }, [fontsLoaded, error])
+
+    if (!fontsLoaded && !error) return null;
+
+    return (
+        <Stack />
+    )
 }
+
+export default RootLayout
