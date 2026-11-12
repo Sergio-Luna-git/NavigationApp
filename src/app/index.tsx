@@ -2,7 +2,7 @@ import { Redirect } from 'expo-router'
 
 const App = () => {
 
-    return <Redirect href={'/(stack)/home'} />
+    return <Redirect href={'/tabs/home'} />
 
     /*return (
         <SafeAreaView className='mt-10 ml-10'>
