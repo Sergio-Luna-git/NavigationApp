@@ -18,16 +18,16 @@ const HomeScreen = () => {
             <View className="px-10">
                 <Text className="text-5xl text-primary">Home</Text>
 
-                <Link href="/profile" asChild>
+                <Link href={'/drawer/tabs/profile'} asChild>
                     <CustomButton className="mb-10" color='primary'>Perfil</CustomButton>
                 </Link>
 
-                <Link href="/settings" asChild>
+                <Link href={'/drawer/tabs/settings'} asChild>
                     <CustomButton className="mb-10" color='secondary'>Ajustes</CustomButton>
                 </Link>
 
                 <CustomButton className="mb-10"
-                    onPress={() => router.push('/products')}
+                    onPress={() => router.push('/drawer/tabs/products')}
                     color='tertiary'>
 
                     Products
@@ -35,7 +35,7 @@ const HomeScreen = () => {
                 </CustomButton>
 
 
-                <Link href="/settings" asChild>
+                <Link href={'/drawer/tabs/settings'} asChild>
                     <CustomButton className="mb-10" variant='text-only' color='primary'>
                         Ajustes variante
                     </CustomButton>

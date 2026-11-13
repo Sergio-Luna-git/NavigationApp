@@ -5,12 +5,9 @@ const StackLayout = () => {
         <Stack screenOptions={{
             headerShown: true,
             headerShadowVisible: false,
-            headerStyle: {
-                backgroundColor: 'pink'
-            },
             contentStyle: {
-                backgroundColor: 'pink'
-            },
+                backgroundColor: 'white'
+            }
         }}>
             <Stack.Screen
                 name="home/index"

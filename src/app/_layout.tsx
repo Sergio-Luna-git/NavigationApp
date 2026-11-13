@@ -20,6 +20,7 @@ const RootLayout = () => {
 
     return (
         <Slot />
+
     )
 }
 
